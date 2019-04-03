@@ -9,6 +9,8 @@ class GameBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            gameStarted: false,
+            secretNumber: 0,
             guess: 0
         }
     }
@@ -18,7 +20,8 @@ class GameBox extends React.Component {
     render() {
         return (
             <div>
-                <GuessMessage />
+                <GuessMessage gameStarted={this.state.gameStarted} 
+                    temp={Math.abs(this.state.guess - this.state.secretNumber)} />
                 <div className='form-box'>
                     <GuessForm />
                     <GuessTracker />
