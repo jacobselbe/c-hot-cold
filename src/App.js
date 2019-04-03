@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.css';
+import './app.css';
+import GameBox from './GameBox';
+import NewGame from './NewGame';
 
 function App() {
   return (
     <div>
-      <h1>Stuff</h1>
+      <h1>HOT or COLD</h1>
+      <GameBox />
+      <NewGame />
     </div>
   );
 }
