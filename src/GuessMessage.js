@@ -2,8 +2,8 @@ import React from 'react';
 
 function GuessMessage(props) {
     const message = !props.gameStarted ?
-        'Make your guess!' : props.temp === 0 ?
-            'You got it!' : props.temp <= 10 ?
+        'Make Your Guess!' : props.temp === 0 ?
+            'You Got It!' : props.temp <= 10 ?
                 'Hot!' : props.temp <= 20 ?
                     'Warm!' : 'Cold';
         

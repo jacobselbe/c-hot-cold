@@ -11,22 +11,30 @@ class GameBox extends React.Component {
         this.state = {
             gameStarted: false,
             secretNumber: 0,
-            guess: 0
+            guessedValues: []
         }
     }
 
     //some callback functions for the components below...
+    updateGuess(e) {
+        e.preventDefault();
+        const guess = document.getElementById('guessInput').value;
+        this.setState({
+            guessedValues: [...this.state.guessedValues, guess],
+            gameStarted: true
+        });
+    }
 
     render() {
         return (
             <div>
                 <GuessMessage gameStarted={this.state.gameStarted} 
-                    temp={Math.abs(this.state.guess - this.state.secretNumber)} />
+                    temp={Math.abs(this.state.guessedValues[this.state.guessedValues.length - 1] - this.state.secretNumber)} />
                 <div className='form-box'>
-                    <GuessForm />
+                    <GuessForm onSubmit={e => this.updateGuess(e)} />
                     <GuessTracker />
                 </div>
-                <GuessedValues />
+                <GuessedValues guess={this.state.guess} />
             </div>
         );
     }
