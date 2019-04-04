@@ -32,9 +32,9 @@ class GameBox extends React.Component {
                     temp={Math.abs(this.state.guessedValues[this.state.guessedValues.length - 1] - this.state.secretNumber)} />
                 <div className='form-box'>
                     <GuessForm onSubmit={e => this.updateGuess(e)} />
-                    <GuessTracker />
+                    <GuessTracker guesses={this.state.guessedValues.length}/>
                 </div>
-                <GuessedValues guess={this.state.guess} />
+                <GuessedValues guessedValues={this.state.guessedValues} />
             </div>
         );
     }

@@ -1,24 +1,16 @@
 import React from 'react';
 
-class GuessedValues extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            list: []
-        }
-    }
-    
-    
-    render() {
-
+function GuessedValues(props) {
+    const values = props.guessedValues
+        .map((value, index) => <li key={index}>{value}</li>);
         
-
-        return (
-            <div>
-
-            </div >
-        );
-    }
+    return (
+        <div>
+            <ul>
+                {values}
+            </ul>
+        </div >
+    );
 }
 
 export default GuessedValues;
