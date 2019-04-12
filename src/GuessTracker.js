@@ -3,7 +3,7 @@ import React from 'react';
 function GuessTracker(props) {
     return (
         <div>
-            <h3>{props.guesses}</h3>
+            <h3>Guesses: {props.guesses}</h3>
         </div>
     );
 }

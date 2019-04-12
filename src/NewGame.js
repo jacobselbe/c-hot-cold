@@ -1,9 +1,9 @@
 import React from 'react';
 
-function NewGame() {
+function NewGame(props) {
     return (
         <div>
-
+            <button onClick={() => props.restartGame()}>New Game</button>
         </div>
     );
 }
