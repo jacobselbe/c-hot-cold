@@ -22,10 +22,9 @@ class App extends React.Component {
     });
   }
 
-  updateGuess(e) {
-    e.preventDefault();
+  updateGuess(guess) {
     this.setState({
-      guessedValues: [...this.state.guessedValues, document.getElementById('guessInput').value]
+      guessedValues: [...this.state.guessedValues, guess]
     });
   }
 
@@ -48,7 +47,7 @@ class App extends React.Component {
         </header>
         <main role='main'>
           <GuessMessage message={message} />
-          <GuessForm onSubmit={e => this.updateGuess(e)} />
+          <GuessForm onSubmit={guess => this.updateGuess(guess)} />
           <GuessTracker guesses={guessedValues.length} />
           <GuessedValues guessedValues={guessedValues} />
         </main>
